@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aggregateModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3b67c0e2-867c-4403-9d80-429797192545" modelNamespace="TestDomain.Cqrs" xmlns="http://schemas.microsoft.com/dsltools/PDizzle">
+  <aggregateRoot>
+    <aggregateRoot Id="8cfcb4aa-54ce-4d53-83d7-07d3155d9352" name="Player" description="A player">
+      <properties>
+        <aggregateRootHasProperties Id="1438e999-add2-4415-86d1-5c8e75fc2912">
+          <property Id="43d2a7fd-e1bd-48d4-8fef-076ecd11dbf5" order="1" name="Id" type="PlayerId" description="The id for the player" />
+        </aggregateRootHasProperties>
+        <aggregateRootHasProperties Id="38c11d62-74ca-48fc-bc5f-5bd8ea8d35f7">
+          <property Id="ab43d277-38d1-479b-9b00-4acabcbfac9b" order="2" name="FirstName" type="String" description="The first name" />
+        </aggregateRootHasProperties>
+        <aggregateRootHasProperties Id="c213b44c-5816-45ed-800d-d62e007da7b7">
+          <property Id="4bea174a-3a28-4016-ab8f-2035eccae450" order="3" name="LastName" type="String" description="The last name" />
+        </aggregateRootHasProperties>
+        <aggregateRootHasProperties Id="e4f8805b-c9ae-48c5-b0f1-0f552be16133">
+          <property Id="5049dd41-b62b-45f5-b91c-7beeaa3da369" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+        </aggregateRootHasProperties>
+        <aggregateRootHasProperties Id="1d81bbc4-e923-4997-8563-54f602b07a49">
+          <property Id="918e1cd8-5b3f-4405-ba84-00a4e9b62b07" order="5" name="Street" type="String" />
+        </aggregateRootHasProperties>
+      </properties>
+      <domainCommands>
+        <aggregateRootReferencesDomainCommands Id="f0601045-83cd-41e0-9eab-1ed034414f14">
+          <domainCommandMoniker name="/3b67c0e2-867c-4403-9d80-429797192545/CreatePlayer" />
+        </aggregateRootReferencesDomainCommands>
+        <aggregateRootReferencesDomainCommands Id="8f824259-4410-4d77-a531-93b5fc28f33c">
+          <domainCommandMoniker name="/3b67c0e2-867c-4403-9d80-429797192545/UpdatePlayer" />
+        </aggregateRootReferencesDomainCommands>
+      </domainCommands>
+      <domainEvents>
+        <aggregateRootReferencesDomainEvents Id="27c9c260-9d88-452b-a8e4-31189707be64">
+          <domainEventMoniker Id="e003d162-9205-4907-88fa-1e7364203fc6" />
+        </aggregateRootReferencesDomainEvents>
+        <aggregateRootReferencesDomainEvents Id="ad6ab72d-84cd-422c-a502-8476657f1d0d">
+          <domainEventMoniker Id="11e60410-0033-4e64-bf0b-c745f8db52fc" />
+        </aggregateRootReferencesDomainEvents>
+      </domainEvents>
+    </aggregateRoot>
+  </aggregateRoot>
+  <domainCommands>
+    <aggregateModelHasDomainCommands Id="af25492c-8bd9-46f6-9bff-458c1b0c3362">
+      <domainCommand Id="2d09e4d2-41dd-423c-b969-b25b15145618" name="CreatePlayer" description="Create a new player">
+        <properties>
+          <domainCommandHasProperties Id="1eafab07-54e3-4eff-a755-8b6fae6c548a">
+            <property Id="cd511da1-688b-4ef6-a983-260f8d3ce2b8" order="1" name="Id" type="PlayerId" description="The id for the player" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="c5b7f369-7cd7-4318-8724-05ef27e89681">
+            <property Id="c05246e1-c1d2-4c6a-8660-3d28b4167774" order="2" name="FirstName" type="String" description="The first name" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="74022ce0-611d-4498-a87e-0f9f0135be64">
+            <property Id="20e08e93-90cd-49ac-b918-378ab0911dd5" order="3" name="LastName" type="String" description="The last name" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="2c2b16b3-caf3-49b5-9457-1a1fab13e36c">
+            <property Id="5f96162d-c337-4f29-bd99-ed4ad4230bc8" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="d73b7542-7c38-4486-885f-cd86580b3fd1">
+            <property Id="715436e4-f0c4-4c57-a85c-6150133076ab" order="5" name="Street" type="String" />
+          </domainCommandHasProperties>
+        </properties>
+      </domainCommand>
+    </aggregateModelHasDomainCommands>
+    <aggregateModelHasDomainCommands Id="96536892-894b-4258-9887-bfe7bcaf9dbf">
+      <domainCommand Id="4dbe8ea3-4f2f-44b8-a30b-e4336bf56300" name="UpdatePlayer" description="Update existing player">
+        <properties>
+          <domainCommandHasProperties Id="2ab46f80-993f-4f36-9ae3-7fd0c9afef69">
+            <property Id="895ccca4-221f-4c51-93ce-4b022a911633" order="1" name="Id" type="PlayerId" description="The id for the player" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="333ee4f6-5a3b-4058-a9b2-cdd00c31721f">
+            <property Id="5d415187-0dd6-4d14-a1cb-9ef76d580e89" order="2" name="FirstName" type="String" description="The first name" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="2922d61e-7499-4aa6-9609-1b55f6474d97">
+            <property Id="a40ec553-35f0-4d05-9659-4d3b3dc583c8" order="3" name="LastName" type="String" description="The last name" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="7b47140a-e336-40c7-96c6-2151abfef6d6">
+            <property Id="e47cd00c-eacc-44f4-a985-cc44ee2a1d3a" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+          </domainCommandHasProperties>
+          <domainCommandHasProperties Id="ff4b1877-ccd9-470e-9e80-3eadfe5e71e0">
+            <property Id="6801bd9b-63ca-4b06-b7f4-61717bd126fd" order="5" name="Street" type="String" />
+          </domainCommandHasProperties>
+        </properties>
+      </domainCommand>
+    </aggregateModelHasDomainCommands>
+  </domainCommands>
+  <views>
+    <aggregateModelHasViews Id="8b44ea65-b912-44d9-8a2b-5ec3a24d5dd1">
+      <view Id="d432879a-ddd0-4545-895e-dd470c93ef2c" name="PlayerView" description="Basic player view">
+        <properties>
+          <viewHasProperties Id="3d0ebe9f-c65a-4a9b-8c76-4f2b4716f784">
+            <property Id="8ff3d4b2-d3eb-4d2d-849d-06d0bf5b34d7" order="1" name="Id" type="PlayerId" description="The id for the player" />
+          </viewHasProperties>
+          <viewHasProperties Id="4bb2524d-b096-4023-89d0-e11a410686cd">
+            <property Id="f00e33e4-5878-4877-9ce2-ab6866dd108e" order="2" name="FirstName" type="String" description="The first name" />
+          </viewHasProperties>
+          <viewHasProperties Id="ba5e24d2-38a2-4da7-b919-bbc4cc5dc858">
+            <property Id="d01e7802-40fd-4185-9d96-751544f460ba" order="3" name="LastName" type="String" description="The last name" />
+          </viewHasProperties>
+          <viewHasProperties Id="2b0c509b-f9be-43ac-87cf-35cc1eb3936a">
+            <property Id="db55a1c2-bede-4021-a86d-e5cbff31cf52" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+          </viewHasProperties>
+          <viewHasProperties Id="19b5400b-a7b0-4e62-af5a-5c32d4a055ee">
+            <property Id="ad11c499-51c3-4ab9-9808-14a71bf514d3" order="5" name="Street" type="String" />
+          </viewHasProperties>
+        </properties>
+        <domainEvents>
+          <viewHandlesDomainEvents Id="6c7b4f50-4f44-4eb9-b670-5ba08170f739">
+            <domainEvent Id="4ec1dd09-7126-480c-860f-98b4235b2c1c" name="PlayerCreated" />
+          </viewHandlesDomainEvents>
+          <viewHandlesDomainEvents Id="7a79cd3b-3a13-441d-bd04-c1eb516bd53e">
+            <domainEvent Id="da13918a-af09-4077-a5d9-22abcd67f0a3" name="PlayerUpdated" />
+          </viewHandlesDomainEvents>
+        </domainEvents>
+      </view>
+    </aggregateModelHasViews>
+  </views>
+  <domainEvented>
+    <aggregateModelHandlesDomainEvents Id="a8837efa-8544-440d-8ae0-50b65b004a9c">
+      <domainEvent Id="e003d162-9205-4907-88fa-1e7364203fc6" name="PlayerCreated" description="A new player was created">
+        <properties>
+          <domainEventHasProperties Id="c4f52983-3b32-4d37-ba39-8293e15e125c">
+            <property Id="da74040a-0675-4d48-9446-5e0927e52cb1" order="1" name="Id" type="PlayerId" description="The id for the player" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="23bfb488-2be5-421c-a811-b03fa732f996">
+            <property Id="20bd7cd8-8b44-4420-96df-990dfcb33904" order="2" name="FirstName" type="String" description="The first name" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="19d1b0df-16d0-4b39-b622-c2e67a80b1f6">
+            <property Id="947adf5c-51f2-4767-961c-389e7c745972" order="3" name="LastName" type="String" description="The last name" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="6ead6f3e-8e78-463a-af9d-2398f4148682">
+            <property Id="631b0b67-5690-4753-a33b-52e8fbcb7542" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="dc72414b-9281-4722-bc90-94d48a9f7378">
+            <property Id="6268c706-e166-4e11-94bc-8626d9e24a4a" order="5" name="Street" type="String" />
+          </domainEventHasProperties>
+        </properties>
+      </domainEvent>
+    </aggregateModelHandlesDomainEvents>
+    <aggregateModelHandlesDomainEvents Id="2c62dddd-1aa3-48f5-b118-88c710ff7f9b">
+      <domainEvent Id="11e60410-0033-4e64-bf0b-c745f8db52fc" name="PlayerUpdated" description="An existing player was updated">
+        <properties>
+          <domainEventHasProperties Id="e940e7e3-1087-4069-8d06-dd537e33f8a7">
+            <property Id="070c4e97-0b50-4d09-a404-2a372e316068" order="1" name="Id" type="PlayerId" description="The id for the player" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="3b321af6-5845-43b8-8c8a-d68b1a9ea7c2">
+            <property Id="e0200d42-34e6-44ea-a351-2adbb61abffa" order="2" name="FirstName" type="String" description="The first name" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="5db4b6c8-1bb8-4258-8022-86572ef94abd">
+            <property Id="19342714-8ebf-448b-b7a9-db9d34851921" order="3" name="LastName" type="String" description="The last name" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="297d8e9e-7e9f-4f99-855b-0075a276e28e">
+            <property Id="95ae74ad-f3d3-4cdd-93bd-18096c137bcb" order="4" name="BirthDate" type="DateTime?" description="Player's birth date" />
+          </domainEventHasProperties>
+          <domainEventHasProperties Id="d8a7ec86-66a1-48a3-9055-837c64f7e4f4">
+            <property Id="7d20ecf6-67dd-4699-bc01-89065bfd6058" order="5" name="Street" type="String" />
+          </domainEventHasProperties>
+        </properties>
+      </domainEvent>
+    </aggregateModelHandlesDomainEvents>
+  </domainEvented>
+</aggregateModel>
